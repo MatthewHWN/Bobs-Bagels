@@ -13,9 +13,9 @@ So that I can change my order
 I'd like to remove an item from my basket
 
 
-| Objects | Properties | Message       | Output          |
-| --------| -----------| --------------| ----------------|
-| Basket  | @Array     | addItem(Item) | @Array[@String] |
+| Objects  | Properties | Message       | Output          |
+| ---------| -----------| --------------| ----------------|
+| Basket   | @Array     | addItem(Item) | @Array[@String] |
 | Customer | Item @String | removeItem(Item) | @Array[@String] |
 | Item | @String | . | . |
 
@@ -42,7 +42,7 @@ I'd like to know if I try to remove an item that doesn't exist in my basket. In 
 | Customer | Item @String | removeItem(Item) | @Array[@String] |
 |          |              | getBasketSize()  | @integer        |
 |          |              | isBasketFull()   | @boolean        |
-|          |              | isInBasket()    | @boolean        |
+|          |              | isInBasket()     | @boolean        |
 | Item | @String | . | . |
 | Manager | @Class  | changeBasketSize(basketSize, integer) | @integer
 
