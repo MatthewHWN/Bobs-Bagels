@@ -12,14 +12,19 @@ So that I can change my order
 
 I'd like to remove an item from my basket
 
-
+Original Domain Models Table
 | Objects  | Properties   | Message          | Output          |
-| ---------| -------------| -----------------| ----------------|
+| -------- | ------------ | ---------------- | --------------- |
 | Basket   | @Array       | addItem(Item)    | @Array[@String] |
 | Customer | Item @String | removeItem(Item) | @Array[@String] |
 | Item     | @String      |                  |                 |
 
-
+Revised Domain Models Table
+| Objects  | Properties | Message          | Output  |
+| -------- | ---------- | ---------------- | ------- |
+| Basket   | @Array     | addItem(Item)    | @Array  |
+| Customer | @Class     | removeItem(Item) | @String |
+| Item     | @String    |                  |         |
 
 # Part 2
 As a member of the public,
@@ -37,7 +42,7 @@ I'd like to know if I try to remove an item that doesn't exist in my basket. In 
 
 
 | Objects  | Properties   | Message                               | Output          |
-| -------- | ------------ | --------------------------------------| ----------------|
+| -------- | ------------ | ------------------------------------- | --------------- |
 | Basket   | @Array       | addItem(Item)                         | @Array[@String] |
 | Customer | Item @String | removeItem(Item)                      | @Array[@String] |
 |          |              | getBasketSize()                       | @integer        |
@@ -56,12 +61,12 @@ As a member of the public,
 So that I can prepare to pay
 When I go to checkout I'd like to know the total sum of the bagels in my basket
 
-| Objects     | Properties  | Message    | Output      |
-| ----------- | ----------- | ---------- | ----------- |
-| Basket      | @Array      | addItem(Item) | @Array[@String] |
-|||showItemPrice(@integer)|
-| Customer | Item @String | removeItem(Item) | @Array[@String] |
-||| sumBasket()| @integer
-||| isAtCheckout() | @boolean
-| Item | @String | . | . |
-| Value|  @integer | giveItemPrice() | @integer 
+| Objects  | Properties   | Message                 | Output          |
+| -------- | ------------ | ----------------------- | --------------- |
+| Basket   | @Array       | addItem(Item)           | @Array[@String] |
+|          |              | showItemPrice(@integer) |
+| Customer | Item @String | removeItem(Item)        | @Array[@String] |
+|          |              | sumBasket()             | @integer        |
+|          |              | isAtCheckout()          | @boolean        |
+| Item     | @String      | .                       | .               |
+| Value    | @integer     | giveItemPrice()         | @integer        |
