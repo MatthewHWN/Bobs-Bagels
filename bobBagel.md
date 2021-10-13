@@ -13,11 +13,11 @@ So that I can change my order
 I'd like to remove an item from my basket
 
 
-| Objects  | Properties | Message       | Output          |
-| ---------| -----------| --------------| ----------------|
-| Basket   | @Array     | addItem(Item) | @Array[@String] |
+| Objects  | Properties   | Message          | Output          |
+| ---------| -------------| -----------------| ----------------|
+| Basket   | @Array       | addItem(Item)    | @Array[@String] |
 | Customer | Item @String | removeItem(Item) | @Array[@String] |
-| Item | @String | . | . |
+| Item     | @String      |                  |                 |
 
 
 
@@ -36,15 +36,15 @@ I'd like to know if I try to remove an item that doesn't exist in my basket. In 
 
 
 
-| Objects  | Properties   | Message          | Output        |
-| -------- | ------------ | -----------------| -----------     |
-| Basket   | @Array       | addItem(Item)    | @Array[@String] |
-| Customer | Item @String | removeItem(Item) | @Array[@String] |
-|          |              | getBasketSize()  | @integer        |
-|          |              | isBasketFull()   | @boolean        |
-|          |              | isInBasket()     | @boolean        |
-| Item | @String | . | . |
-| Manager | @Class  | changeBasketSize(basketSize, integer) | @integer
+| Objects  | Properties   | Message                               | Output          |
+| -------- | ------------ | --------------------------------------| ----------------|
+| Basket   | @Array       | addItem(Item)                         | @Array[@String] |
+| Customer | Item @String | removeItem(Item)                      | @Array[@String] |
+|          |              | getBasketSize()                       | @integer        |
+|          |              | isBasketFull()                        | @boolean        |
+|          |              | isInBasket()                          | @boolean        |
+| Item     | @String      |                                       |                 |
+| Manager  | @Class       | changeBasketSize(basketSize, integer) | @integer        |
 
 
 # Part 3
@@ -56,9 +56,9 @@ As a member of the public,
 So that I can prepare to pay
 When I go to checkout I'd like to know the total sum of the bagels in my basket
 
-| Objects | Properties | Message | Output |
-| ----------- | ----------- | -----------| ----------- |
-| Basket | @Array | addItem(Item) | @Array[@String] |
+| Objects     | Properties  | Message    | Output      |
+| ----------- | ----------- | ---------- | ----------- |
+| Basket      | @Array      | addItem(Item) | @Array[@String] |
 |||showItemPrice(@integer)|
 | Customer | Item @String | removeItem(Item) | @Array[@String] |
 ||| sumBasket()| @integer
