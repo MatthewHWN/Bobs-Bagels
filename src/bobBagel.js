@@ -2,8 +2,8 @@
 class Customer {
     // var size = ();
     basket = [];
-    constructor() {
-
+    constructor(basketSize = 2) {
+    this.basketSize = basketSize;
     }
 
     addItem(item) {
