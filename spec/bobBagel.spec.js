@@ -1,4 +1,4 @@
-const Customer = require('../src/bobBagel');
+const Customer = require('../src/BobBagel');
 const assertEquals = require('../test-framework');
 const greaterThan = require('../test-framework');
 
@@ -11,7 +11,6 @@ let input = '';
 let customer = new Customer();
 let expectedOutput = customer.basket;
 let actualOutput = [];
-let result;
 
 //execute
 actualOutput = customer.addItem(input);
