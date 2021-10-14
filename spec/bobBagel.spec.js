@@ -1,39 +1,49 @@
+
 const Customer = require('../src/BobBagel');
-const assertEquals = require('../test-framework');
-const greaterThan = require('../test-framework');
+const test = require('../test-framework');
+
+/* const assertEquals = require('../test-framework'); */
+//const greaterThan = require('../test-framework');
 
 //TEST ONE
 //------------------------------------------
-console.log("Testing that you can add item to the basket")
+test.it("Testing that you can add item to the basket", () => {
 
-//setup
+    //setup
+    let input = '';
+    let customer = new Customer();
+    let expectedOutput = customer.basket;
+    let actualOutput = [];
+
+    //execute
+    actualOutput = customer.addItem(input);
+
+    //verify
+    result = test.assertEquals(actualOutput, expectedOutput);
+
+});
+
 let input = '';
 let customer = new Customer();
 let expectedOutput = customer.basket;
 let actualOutput = [];
 
-//execute
-actualOutput = customer.addItem(input);
-
-//verify
-result = assertEquals(actualOutput, expectedOutput);
-console.log(result);
-
-console.log("Testing that you can remove an item from basket")
+//console.log("Testing that you can remove an item from basket")
 
 //TEST TWO
 //------------------------------------
 //setup
-customer.basket = ['potato', 'tomato'];
-input = customer.basket;
-expectedOutput = ['potato'].toString();
+//customer.basket = ['potato', 'tomato'];
+//input = customer.basket;
+//expectedOutput = ['potato'].toString();
 
 //execute
-actualOutput = customer.removeItem().toString();
+//actualOutput = customer.removeItem().toString();
 
 //verify
-result = assertEquals(actualOutput, expectedOutput);
-console.log(result);
+//result = assertEquals(actualOutput, expectedOutput);
+//console.log(result);
+
 // console.log(actualOutput);
 // console.log(expectedOutput);
 
@@ -41,14 +51,14 @@ console.log(result);
 // -------------------------------
 
 //setup
-input = customer.basketSize;
-expectedOutput = input;
-customer.basket = ['wine', 'lemons'];
+//input = customer.basketSize;
+//expectedOutput = input;
+//customer.basket = ['wine', 'lemons'];
 
 //execute
-actualOutput = customer.basket.length;
+//actualOutput = customer.basket.length;
 
 //verify
 
-result = greaterThan(actualOutput, expectedOutput);
-console.log(result);
+//result = greaterThan(actualOutput, expectedOutput);
+//console.log(result);
