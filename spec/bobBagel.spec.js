@@ -8,51 +8,54 @@ const test = require('../test-framework');
 
 //TEST ONE
 //------------------------------------------
-test.xit("Testing that you can add item to the basket", () => {
+test.it("Test One - Testing that you can add item to the basket", () => {
 
 	//setup
-	let input = '';
-	let customer = new Customer();
-	let expectedOutput = customer.basket;
-	let actualOutput = [];
+	let input = 'test';
+	let basket = new Basket();
+	let expectedOutput = ['test'].toString();
+	let actualOutput = basket.itemList;
 
 	//execute
-	actualOutput = customer.addItem(input);
+	actualOutput = basket.addItem(input).toString();
 
 	//verify
-	result = test.assertEquals(actualOutput, expectedOutput);
+	test.assertEquals(actualOutput, expectedOutput);
+	
 
 });
 
-//console.log("Testing that you can remove an item from basket")
+//console.log("")
 
 //TEST TWO
 //------------------------------------
-//setup
-//customer.basket = ['potato', 'tomato'];
-//input = customer.basket;
-//expectedOutput = ['potato'].toString();
+test.it("Test Two - Testing that you can remove an item from basket", () => {
 
-//execute
-//actualOutput = customer.removeItem().toString();
+	//setup
+	let basket = new Basket();
+	basket.itemList = ['potato', 'tomato'];
+	input = basket.itemList;
+	expectedOutput = ['potato'].toString();
 
-//verify
-//result = assertEquals(actualOutput, expectedOutput);
-//console.log(result);
+	//execute
+	actualOutput = basket.removeItem().toString();
 
-// console.log(actualOutput);
-// console.log(expectedOutput);
+	//verify
+	test.assertEquals(actualOutput, expectedOutput);
+
+});
+
 
 //TEST THREE
 // -------------------------------
 
 // setup
-test.it("Testing when the basket is full", () => {
+test.it("Test three - Testing when the basket is full", () => {
 	let basket = new Basket();
 	input = basket.basketSize;
 
 	expectedOutput = true;
-	basket.itemList = ['wine', 'cheese', 'water'];
+	basket.itemList = ['wine', 'cheese'];
 
 	// execute
 	actualOutput = basket.isFull();
@@ -67,7 +70,7 @@ test.it("Testing when the basket is full", () => {
 // -------------------------------
 
 // setup
-test.it("Testing that the manager can increase basket capacity", () => {
+test.it("Test Four - Testing that the manager can increase basket capacity", () => {
 	let input, expectedOutput, actualOutput;
 	let basket = new Basket();
 	input = basket.basketSize;
