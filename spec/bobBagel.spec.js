@@ -4,7 +4,7 @@ const greaterThan = require('../test-framework');
 
 //TEST ONE
 //------------------------------------------
-// console.log("Testing that you can add item to the basket")
+console.log("Testing that you can add item to the basket")
 
 //setup
 let input = '';
@@ -19,7 +19,7 @@ actualOutput = customer.addItem(input);
 result = assertEquals(actualOutput, expectedOutput);
 console.log(result);
 
-// console.log("Testing that you can remove an item from basket")
+console.log("Testing that you can remove an item from basket")
 
 //TEST TWO
 //------------------------------------
