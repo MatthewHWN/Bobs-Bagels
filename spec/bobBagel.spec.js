@@ -1,4 +1,5 @@
 
+const Basket = require('../src/Basket');
 const Customer = require('../src/BobBagel');
 const test = require('../test-framework');
 
@@ -7,26 +8,21 @@ const test = require('../test-framework');
 
 //TEST ONE
 //------------------------------------------
-test.it("Testing that you can add item to the basket", () => {
+test.xit("Testing that you can add item to the basket", () => {
 
-    //setup
-    let input = '';
-    let customer = new Customer();
-    let expectedOutput = customer.basket;
-    let actualOutput = [];
+	//setup
+	let input = '';
+	let customer = new Customer();
+	let expectedOutput = customer.basket;
+	let actualOutput = [];
 
-    //execute
-    actualOutput = customer.addItem(input);
+	//execute
+	actualOutput = customer.addItem(input);
 
-    //verify
-    result = test.assertEquals(actualOutput, expectedOutput);
+	//verify
+	result = test.assertEquals(actualOutput, expectedOutput);
 
 });
-
-let input = '';
-let customer = new Customer();
-let expectedOutput = customer.basket;
-let actualOutput = [];
 
 //console.log("Testing that you can remove an item from basket")
 
@@ -50,15 +46,38 @@ let actualOutput = [];
 //TEST THREE
 // -------------------------------
 
-//setup
-//input = customer.basketSize;
-//expectedOutput = input;
-//customer.basket = ['wine', 'lemons'];
+// setup
+test.it("Testing when the basket is full", () => {
+	let basket = new Basket();
+	input = basket.basketSize;
 
-//execute
-//actualOutput = customer.basket.length;
+	expectedOutput = true;
+	basket.itemList = ['wine', 'cheese', 'water'];
 
-//verify
+	// execute
+	actualOutput = basket.isFull();
 
-//result = greaterThan(actualOutput, expectedOutput);
-//console.log(result);
+	// verify
+	test.assertEquals(actualOutput, expectedOutput);
+})
+
+
+
+// TEST 4
+// -------------------------------
+
+// setup
+test.it("Testing that the manager can increase basket capacity", () => {
+	let input, expectedOutput, actualOutput;
+	let basket = new Basket();
+	input = basket.basketSize;
+	expectedOutput = 5;
+
+	// execute
+	actualOutput = basket.setBasketSize(input, 3);
+
+	// verify
+	test.assertEquals(actualOutput, expectedOutput);
+})
+
+

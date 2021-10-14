@@ -1,10 +1,6 @@
 
 class Customer {
     // var size = ();
-    basket = [];
-    constructor(basketSize = 2) {
-    this.basketSize = basketSize;
-    }
 
     addItem(item) {
         this.basket.push(item);
@@ -15,6 +11,8 @@ class Customer {
         this.basket.pop();
         return this.basket;
     }
+
+
 }
 
 module.exports = Customer;
