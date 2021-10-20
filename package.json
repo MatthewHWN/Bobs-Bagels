@@ -1,0 +1,23 @@
+{
+  "name": "bobs-bagels",
+  "version": "1.0.0",
+  "description": "",
+  "main": "specRunner.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewHWN/Bobs-Bagels.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatthewHWN/Bobs-Bagels/issues"
+  },
+  "homepage": "https://github.com/MatthewHWN/Bobs-Bagels#readme",
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "jasmine": "^3.10.0"
+  }
+}

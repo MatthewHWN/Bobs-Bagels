@@ -1,6 +1,6 @@
-
+const Item = require('../src/Item');
 const Basket = require('../src/Basket');
-const Customer = require('../src/BobBagel');
+// const Customer = require('../src/BobBagel');
 const test = require('../test-framework');
 
 /* const assertEquals = require('../test-framework'); */
@@ -12,12 +12,13 @@ test.it("Test One - Testing that you can add item to the basket", () => {
 
 	//setup
 	let input = 'test';
+	let item = new Item();
 	let basket = new Basket();
 	let expectedOutput = ['test'].toString();
 	let actualOutput = basket.itemList;
 
 	//execute
-	actualOutput = basket.addItem(input).toString();
+	actualOutput = item.addItem(basket, input).toString();
 
 	//verify
 	test.assertEquals(actualOutput, expectedOutput);
@@ -31,12 +32,13 @@ test.it("Test Two - Testing that you can remove an item from basket", () => {
 
 	//setup
 	let basket = new Basket();
+	let item = new Item();
 	basket.itemList = ['potato', 'tomato'];
 	input = basket.itemList;
 	expectedOutput = ['potato'].toString();
 
 	//execute
-	actualOutput = basket.removeItem().toString();
+	actualOutput = item.removeItem(basket).toString();
 
 	//verify
 	test.assertEquals(actualOutput, expectedOutput);
@@ -61,8 +63,6 @@ test.it("Test three - Testing when the basket is full", () => {
 	// verify
 	test.assertEquals(actualOutput, expectedOutput);
 })
-
-
 
 // TEST 4
 // -------------------------------
