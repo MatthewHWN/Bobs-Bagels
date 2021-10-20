@@ -7,7 +7,7 @@ const test = {
     it(str, testFunc) {
         try {
             testFunc();
-            console.log(str);
+            console.log('\n', str);
         }
         catch (err) {
             console.log(str);

@@ -7,13 +7,13 @@ class Basket {
 	}
 
 	addItem(item) {
-        this.itemList.push(item);
-        return this.itemList;
+		this.itemList.push(item);
+		return this.itemList;
 	}
 
 	removeItem() {
-        this.itemList.pop();
-        return this.itemList;
+		this.itemList.pop();
+		return this.itemList;
 	}
 
 	setBasketSize(input, integer) {

@@ -21,11 +21,9 @@ test.it("Test One - Testing that you can add item to the basket", () => {
 
 	//verify
 	test.assertEquals(actualOutput, expectedOutput);
-	
+
 
 });
-
-//console.log("")
 
 //TEST TWO
 //------------------------------------
