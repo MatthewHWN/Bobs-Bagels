@@ -11,6 +11,7 @@ describe("Test suite for Basket class", () => {
 	beforeEach(() => {
 		item = new Item();
 		basket = new Basket();
+
 	})
 
 	afterEach(() => {
@@ -25,12 +26,13 @@ describe("Test suite for Basket class", () => {
 	//------------------------------------------
 	it("Test One - Testing that you can add item to the basket", () => {
 		//setup
-		input = 'test';
-		expectedOutput = ['test'].toString();
+		expectedOutput = 'potato,tomato';
 		actualOutput = basket.itemList;
+		basket.itemList = ['potato'];
+		inBasket = 'tomato'
 
 		//execute
-		actualOutput = item.addItem(basket, input).toString();
+		actualOutput = item.addItem(basket, inBasket).toString();
 
 		//verify
 		expect(actualOutput).toBe(expectedOutput);
@@ -43,9 +45,10 @@ describe("Test suite for Basket class", () => {
 		basket.itemList = ['potato', 'tomato'];
 		input = basket.itemList;
 		expectedOutput = ['potato'].toString();
+		inBasket = 'potato' //fill with arbitrary value
 
 		//execute
-		actualOutput = item.removeItem(basket).toString();
+		actualOutput = item.removeItem(basket, inBasket).toString();
 
 		//verify
 		expect(actualOutput).toBe(expectedOutput);
@@ -79,11 +82,36 @@ describe("Test suite for Basket class", () => {
 		// verify
 		expect(actualOutput).toBe(expectedOutput);
 	})
+
+	// TEST 5
+	// -------------------------------
+	it("Test Five - Testing that you can't remove a non existent item", () => {
+		// setup
+		basket.itemList = ['potato', 'tomato'];
+		expectedOutput = ['potato', 'tomato'];
+		inBasket = 'lemon' // For any item to test if in basket
+		//execute
+		actualOutput = item.removeItem(basket, inBasket);
+		//verify
+		expect(actualOutput).toEqual(expectedOutput);
+	})
+
+	//TEST ONE
+	//------------------------------------------
+	it("Test Six - Testing that you are adding the same item again", () => {
+		//setup
+		input = 'test';
+		expectedOutput = 'test,test'
+		actualOutput = basket.itemList;
+		inBasket = 'test'
+
+		//execute
+		actualOutput = item.addItem(basket, input, inBasket).toString();
+
+		//verify
+		expect(actualOutput).not.toBe(expectedOutput);
+
+	})
+
+
 })
-
-
-
-
-
-
-
