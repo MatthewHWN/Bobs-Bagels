@@ -26,9 +26,9 @@ describe("Test suite for Basket class", () => {
 	//------------------------------------------
 	it("Test One - Testing that you can add item to the basket", () => {
 		//setup
-		expectedOutput = 'potato,tomato';
 		actualOutput = basket.itemList;
 		basket.itemList = ['potato'];
+		expectedOutput = 'potato,tomato';
 		inBasket = 'tomato'
 
 		//execute
@@ -101,15 +101,15 @@ describe("Test suite for Basket class", () => {
 	it("Test Six - Testing that you are adding the same item again", () => {
 		//setup
 		input = 'test';
-		expectedOutput = 'test,test'
+		expectedOutput = 'test'
 		actualOutput = basket.itemList;
 		inBasket = 'test'
 
 		//execute
-		actualOutput = item.addItem(basket, input, inBasket).toString();
+		actualOutput = item.addItem(basket, inBasket).toString();
 
 		//verify
-		expect(actualOutput).not.toBe(expectedOutput);
+		expect(actualOutput).toBe(expectedOutput);
 
 	})
 
